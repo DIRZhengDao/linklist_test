@@ -48,7 +48,7 @@ public class City implements Comparable<City> {
 		this.cityName = cityName;
 	}
 
-	@Override
+
 	public String toString() {
 		return "City [citySort=" + citySort + ", cityName=" + cityName + "]";
 	}
