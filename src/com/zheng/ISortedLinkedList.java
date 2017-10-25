@@ -2,6 +2,7 @@ package com.zheng;
 
 public interface ISortedLinkedList<T extends Comparable<T>> {
 
+
 		/**
 		 * 向链表中插入一个元素，请注意是排序链表
 		 */

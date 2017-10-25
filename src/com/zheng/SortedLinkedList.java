@@ -1,20 +1,22 @@
 package com.zheng;
 
-
-public class SortedLinkedList<T extends Comparable<T>> implements ISortedLinkedList<T> {
-	
+public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinkedList<T> {
+	/**
+	 *@Author zhengzhou
+	 *@Descripiton
+	 *@Data:16:53 2017/10/24
+	 */
 
 	private Node<T> head=null;
 
-	private int size=0;//元素个数
+	private int size=0;
+	/*元素个数*/
 
-	private int nodCount=0;//节点个数
+	private int nodCount=0;
+	/*节点个数*/
 
-		//	public SortedLinkedList() {
-		//		this.head=null;
-		//		this.size=0;
-		//	}
-
+	Boolean isReversed=false;
+	/*判断链表是否反转*/
 
 	private static class Node<T>{
 
@@ -23,21 +25,26 @@ public class SortedLinkedList<T extends Comparable<T>> implements ISortedLinkedL
 		private Node<T> next;
 
 		public Node(T data, Node<T> next) {
-			super();
 			this.data = data;
 			this.next = next;
 		}
-		
 	}
-	
+
+
+
+
 	@Override
 	public void add(T element) {
-
 		Node<T> newNode=new Node<T>(element, null);
 		Node<T> preNode=null;
 		Node<T> current=head;
 
-		while(current!=null&&(element.compareTo(current.data)>0)) {
+		while(current!=null&&element.compareTo(current.data)>0) {
+				preNode=current;
+				current=current.next;
+		}
+
+		while(current!=null&&element.compareTo(current.data)<0&&isReversed) {
 			preNode=current;
 			current=current.next;
 		}
@@ -47,12 +54,13 @@ public class SortedLinkedList<T extends Comparable<T>> implements ISortedLinkedL
 		}else {
 			preNode.next=newNode;
 		}
+
 		newNode.next=current;
 		nodCount++;
 		this.size++;
 	}
-	
-	private Node<T> getNode(int index){
+
+		private Node<T> getNode(int index){
 		Node<T> node=new Node<T>(null, null);
 		if(index>=this.size||index<0) {
 			System.out.println("not satisfied");
@@ -99,7 +107,6 @@ public class SortedLinkedList<T extends Comparable<T>> implements ISortedLinkedL
 		Node<T> current = head.next;
 		Node<T> tmp;
 		while (current!=null) {
-			//System.out.println("test");
 			tmp = current.next;
 			current.next=preNode;
 			preNode = current;
@@ -108,6 +115,8 @@ public class SortedLinkedList<T extends Comparable<T>> implements ISortedLinkedL
 
 		head.next=null;			//将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
 		head = preNode;
+
+		isReversed=true;
 
 	}
 

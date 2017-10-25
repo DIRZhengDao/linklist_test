@@ -1,6 +1,13 @@
 package com.zheng;
 
+import java.util.Arrays;
+
 public class City implements Comparable<City> {
+	/**
+	 *@Author zhengzhou
+	 *@Descripiton
+	 *@Data:14:59 2017/10/16
+	 */
 
 	private int citySort;
 
@@ -19,11 +26,10 @@ public class City implements Comparable<City> {
 
 	@Override
 	public int compareTo(City city) {
-		if(city==null) {
-			return 1;
-		}
+
 		if(this.citySort>city.citySort) {
 			return 1;
+
 		}else if(this.citySort<city.citySort) {
 			return -1;
 		}else {
@@ -49,6 +55,7 @@ public class City implements Comparable<City> {
 	}
 
 
+	@Override
 	public String toString() {
 		return "City [citySort=" + citySort + ", cityName=" + cityName + "]";
 	}
