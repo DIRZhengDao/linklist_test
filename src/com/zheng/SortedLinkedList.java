@@ -38,8 +38,8 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 		Node<T> current=head;
 
 		while (current != null&&element.compareTo(current.data) > 0&&!isReversed) {
-            preNode = current;
-            current = current.next;
+			preNode = current;
+        	current = current.next;
 		}
 
 		while(current!=null&&element.compareTo(current.data)<0&&isReversed) {
