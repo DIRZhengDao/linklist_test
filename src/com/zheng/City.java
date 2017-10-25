@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class City implements Comparable<City> {
 	/**
-	 *@Author zhengzhou
-	 *@Descripiton
-	 *@Data:14:59 2017/10/16
+	 *@author zhengzhou
+	 *@descripiton
+	 *@date 11:21 2017/10/25
 	 */
 
 	private int citySort;

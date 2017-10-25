@@ -2,9 +2,9 @@ package com.zheng;
 
 public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinkedList<T> {
 	/**
-	 *@Author zhengzhou
-	 *@Descripiton
-	 *@Data:16:53 2017/10/24
+	 *@author zhengzhou
+	 *@descripiton
+	 *@date 11:21 2017/10/25
 	 */
 
 	private Node<T> head=null;
@@ -114,7 +114,8 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 			current = tmp;
 		}
 
-		head.next=null;			//将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
+		head.next=null;
+		/*将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head*/
 		head = preNode;
 		isReversed=true;
 	}

@@ -4,9 +4,9 @@ import java.util.Arrays;
 
 public class SortedLinkedListTest {
 	/**
-	 *@Author zhengzhou
-	 *@Descripiton
-	 *@Data:16:53 2017/10/24
+	 *@author zhengzhou
+	 *@descripiton
+	 *@date 11:21 2017/10/25
 	 */
 	public static void main(String[] args) {
 		SortedLinkedList<City> sortedLinkedList=new SortedLinkedList<City>();
