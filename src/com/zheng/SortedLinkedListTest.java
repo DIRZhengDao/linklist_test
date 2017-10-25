@@ -38,7 +38,7 @@ public class SortedLinkedListTest {
 		System.out.println(sortedLinkedList.get(3));
 		//System.out.println(sortedLinkedList.get(4));
 
-		sortedLinkedList.add(new City(20,"wuhan"));
+		sortedLinkedList.add(new City(19,"wuhan"));
 
 		System.out.println("链表中元素个数："+sortedLinkedList.size());
 

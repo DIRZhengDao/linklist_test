@@ -30,18 +30,16 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 		}
 	}
 
-
-
-
 	@Override
 	public void add(T element) {
+
 		Node<T> newNode=new Node<T>(element, null);
 		Node<T> preNode=null;
 		Node<T> current=head;
 
-		while(current!=null&&element.compareTo(current.data)>0) {
-				preNode=current;
-				current=current.next;
+		while (current != null&&element.compareTo(current.data) > 0&&(isReversed==false)) {
+				preNode = current;
+				current = current.next;
 		}
 
 		while(current!=null&&element.compareTo(current.data)<0&&isReversed) {
@@ -60,7 +58,8 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 		this.size++;
 	}
 
-		private Node<T> getNode(int index){
+
+	private Node<T> getNode(int index){
 		Node<T> node=new Node<T>(null, null);
 		if(index>=this.size||index<0) {
 			System.out.println("not satisfied");
@@ -119,6 +118,4 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 		isReversed=true;
 
 	}
-
-
 }

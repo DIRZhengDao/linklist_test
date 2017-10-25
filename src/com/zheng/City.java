@@ -29,7 +29,6 @@ public class City implements Comparable<City> {
 
 		if(this.citySort>city.citySort) {
 			return 1;
-
 		}else if(this.citySort<city.citySort) {
 			return -1;
 		}else {
