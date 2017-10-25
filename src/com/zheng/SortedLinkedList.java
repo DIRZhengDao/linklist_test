@@ -38,8 +38,8 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 		Node<T> current=head;
 
 		while (current != null&&element.compareTo(current.data) > 0&&(isReversed==false)) {
-				preNode = current;
-				current = current.next;
+            preNode = current;
+            current = current.next;
 		}
 
 		while(current!=null&&element.compareTo(current.data)<0&&isReversed) {
@@ -98,10 +98,12 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 
 	@Override
 	public void reverse() {
+
 		if(head==null||head.next==null){
 			System.out.print("no need reverse");
 			return;
 		}
+
 		Node<T> preNode = head;
 		Node<T> current = head.next;
 		Node<T> tmp;
@@ -114,8 +116,6 @@ public class SortedLinkedList<T extends Comparable<T> > implements ISortedLinked
 
 		head.next=null;			//将原链表的头节点的下一个节点置为null，再将反转后的头节点赋给head
 		head = preNode;
-
 		isReversed=true;
-
 	}
 }
